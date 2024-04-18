@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex">
+      <Sidebar />
+      <main className="flex grow flex-col p-2.5">
+        <div className="">Debt Free By</div>
+
+        <div className="flex grow flex-col gap-5 p-2.5">
+          <div className="flex h-1/2 flex-col rounded bg-slate-200 p-3 shadow-lg">
+            Summary
+          </div>
+
+          <div className="flex grow gap-5">
+            <div className="w-1/2 rounded bg-slate-200 p-3 shadow-lg">
+              Debts
+            </div>
+            <div className="grow rounded bg-slate-200 p-3 shadow-lg">
+              Payoff Plan
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
