@@ -1,5 +1,9 @@
 import "./App.css";
 import Sidebar from "./components/Sidebar";
+import Summary from "./components/Summary";
+import Debts from "./components/Debts";
+import PayoffPlan from "./components/PayoffPlan";
+import DebtsData from "./data.json";
 
 function App() {
   return (
@@ -9,17 +13,11 @@ function App() {
         <div className="text-bold text-lg">Debt Free By</div>
 
         <div className="flex grow flex-col gap-5 p-2.5">
-          <div className="text-bold flex h-1/2 flex-col rounded bg-slate-200 p-3 text-lg shadow-lg">
-            Summary
-          </div>
+          <Summary />
 
           <div className="flex grow gap-5">
-            <div className="text-bold w-1/2 rounded bg-slate-200 p-3 text-lg shadow-lg">
-              Debts
-            </div>
-            <div className="text-bold grow rounded bg-slate-200 p-3 text-lg shadow-lg">
-              Payoff Plan
-            </div>
+            <Debts data={DebtsData} />
+            <PayoffPlan />
           </div>
         </div>
       </main>
