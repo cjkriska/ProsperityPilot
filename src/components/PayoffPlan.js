@@ -1,6 +1,6 @@
 import PaymentStage from "./PaymentStage";
 
-function PayoffPlan() {
+function PayoffPlan({ data }) {
   return (
     <div className="text-bold flex grow flex-col rounded bg-slate-200 p-3 text-lg shadow-lg">
       <h1 className="mb-3">Payoff Plan</h1>
@@ -12,9 +12,9 @@ function PayoffPlan() {
             <input className="w-12" value={200} /> = ${769.72}
           </div>
         </div>
-        <PaymentStage months={12} debtName={"Discover"} APR={18.1} />
-        <PaymentStage months={10} debtName={"Earnest"} APR={4.09} />
-        <PaymentStage months={11} debtName={"FedLoan"} APR={3.39} />
+        {data.map((stage, index) => {
+          return <PaymentStage key={index} stage={stage} />;
+        })}
       </div>
     </div>
   );
