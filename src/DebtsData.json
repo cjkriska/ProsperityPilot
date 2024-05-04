@@ -1,0 +1,20 @@
+[
+    {
+        "DebtName": "Earnest",
+        "DebtType": "Student Loan",
+        "Balance": 23098,
+        "APR": 4.09
+    },
+    {
+        "DebtName": "FedLoan",
+        "DebtType": "Student Loan",
+        "Balance": 15248,
+        "APR": 3.39
+    },
+    {
+        "DebtName": "Discover",
+        "DebtType": "Credit Card",
+        "Balance": 2001,
+        "APR": 18.1
+    }
+]

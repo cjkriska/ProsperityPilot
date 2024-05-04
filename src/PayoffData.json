@@ -1,0 +1,17 @@
+[
+    {
+        "debtName": "Earnest",
+        "months": 11,
+        "APR": 4.09
+    },
+    {
+        "debtName": "FedLoan",
+        "months": 5,
+        "APR": 3.39
+    },
+    {
+        "debtName": "Discover",
+        "months": 15,
+        "APR": 18.1
+    }
+]

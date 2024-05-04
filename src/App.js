@@ -1,25 +1,28 @@
 import "./App.css";
 import Sidebar from "./components/Sidebar";
+import Summary from "./components/Summary";
+import Debts from "./components/Debts";
+import PayoffPlan from "./components/PayoffPlan";
+
+import DebtsData from "./DebtsData.json";
+import PayoffData from "./PayoffData.json";
 
 function App() {
   return (
     <div className="flex">
       <Sidebar />
       <main className="flex grow flex-col p-2.5">
-        <div className="text-bold text-lg">Debt Free By</div>
+        <div className="m-3 flex p-3 text-lg">
+          <div className="text-bold mr-2">Debt Free By: </div>
+          <div className="">August 23rd 2032</div>
+        </div>
 
         <div className="flex grow flex-col gap-5 p-2.5">
-          <div className="text-bold flex h-1/2 flex-col rounded bg-slate-200 p-3 text-lg shadow-lg">
-            Summary
-          </div>
+          <Summary />
 
           <div className="flex grow gap-5">
-            <div className="text-bold w-1/2 rounded bg-slate-200 p-3 text-lg shadow-lg">
-              Debts
-            </div>
-            <div className="text-bold grow rounded bg-slate-200 p-3 text-lg shadow-lg">
-              Payoff Plan
-            </div>
+            <Debts data={DebtsData} />
+            <PayoffPlan data={PayoffData} />
           </div>
         </div>
       </main>
