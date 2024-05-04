@@ -9,7 +9,7 @@ import PayoffData from "./PayoffData.json";
 
 function App() {
   return (
-    <div className="flex font-mono">
+    <div className="flex">
       <Sidebar />
       <main className="flex grow flex-col p-2.5">
         <div className="m-3 flex p-3 text-lg">
