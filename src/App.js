@@ -4,10 +4,20 @@ import Summary from "./components/Summary";
 import Debts from "./components/Debts";
 import PayoffPlan from "./components/PayoffPlan";
 
-import DebtsData from "./DebtsData.json";
 import PayoffData from "./PayoffData.json";
+import DebtsData from "./DebtsData.json";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [debtsData, setDebtsData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/debts")
+      .then((res) => res.json())
+      .then((json) => setDebtsData(json))
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <div className="flex">
       <Sidebar />
@@ -21,7 +31,7 @@ function App() {
           <Summary />
 
           <div className="flex grow gap-5">
-            <Debts data={DebtsData} />
+            <Debts data={debtsData} />
             <PayoffPlan data={PayoffData} />
           </div>
         </div>
