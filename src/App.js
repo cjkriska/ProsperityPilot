@@ -10,11 +10,19 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [debtsData, setDebtsData] = useState([]);
+  const [payoffData, setPayoffData] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:8080/debts")
       .then((res) => res.json())
       .then((json) => setDebtsData(json))
+      .catch((error) => console.error(error));
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/testCalculatePayoffStages/100")
+      .then((res) => res.json())
+      .then((json) => setPayoffData(json))
       .catch((error) => console.error(error));
   }, []);
 
@@ -32,7 +40,7 @@ function App() {
 
           <div className="flex grow gap-5">
             <Debts data={debtsData} />
-            <PayoffPlan data={PayoffData} />
+            <PayoffPlan data={payoffData} />
           </div>
         </div>
       </main>
